@@ -36,12 +36,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import tv.cleanyour.ui.design.R
 import tv.cleanyour.ui.design.icon.CytIcons
 import tv.cleanyour.ui.design.theme.CytMotion
 import tv.cleanyour.ui.design.theme.CytTheme
@@ -77,7 +79,7 @@ private fun tvType(size: Float, weight: FontWeight = FontWeight.Normal, tracking
 @Composable
 private fun CleanHome(u: Dp, modifier: Modifier) {
     Box(modifier.fillMaxSize().ambientGlow(Color(0xFFE8343D), coreAlpha = 0.30f, midAlpha = 0.09f)) {
-        Text("GOOD AFTERNOON", Modifier.offset(u * 18, u * 14), color = Color.White.copy(alpha = 0.55f), style = tvType(5 * u.value, tracking = 1.2f * u.value))
+        Text(stringResource(R.string.cyt_illustration_greeting), Modifier.offset(u * 18, u * 14), color = Color.White.copy(alpha = 0.55f), style = tvType(5 * u.value, tracking = 1.2f * u.value))
         Text("2:17", Modifier.offset(u * 16, u * 20), color = Color(0xFFF5F5F7), style = tvType(22 * u.value, FontWeight.ExtraLight))
         Row(Modifier.align(Alignment.TopEnd).padding(top = u * 22, end = u * 14), horizontalArrangement = Arrangement.spacedBy(u * 5)) {
             repeat(3) { MiniPill(u) }
